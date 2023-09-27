@@ -26,7 +26,6 @@ const fetchContributions = async (username) => {
         'Content-Type': 'application/json',
       }
     });
-
     return response.data;
   } catch (error) {
     console.error('Error fetching GitHub contribution data:', error);

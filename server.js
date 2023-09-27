@@ -1,14 +1,12 @@
 const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-
-// Middleware to parse JSON requests
-app.use(express.json());
-
-// Include and use the GitHub routes
+require('dotenv').config();
 const githubRoutes = require('./routes/githubRoutes');
-app.use('/api', githubRoutes);
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use('/githubContributions', githubRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
