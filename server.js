@@ -8,7 +8,7 @@ const githubRoutes = require('./routes/githubRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors());  
 app.use('/githubContributions', githubRoutes);
 
 app.listen(PORT, () => {
